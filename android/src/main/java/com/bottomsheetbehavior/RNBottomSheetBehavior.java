@@ -244,7 +244,7 @@ public class RNBottomSheetBehavior<V extends View> extends CoordinatorLayout.Beh
       mScrollVelocityTracker.clear();
     }
 
-    if ( ! mIgnoreEvents  &&  mViewDragHelper.shouldInterceptTouchEvent( event ) ) {
+    if ( ! mIgnoreEvents && mViewDragHelper != null && mViewDragHelper.shouldInterceptTouchEvent( event ) ) {
       return true;
     }
     // We have to handle cases that the ViewDragHelper does not capture the bottom sheet because
